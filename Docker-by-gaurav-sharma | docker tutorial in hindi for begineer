@@ -62,4 +62,9 @@ docker container ls -a # list all container including stopped container.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-4) 
+4) pull image from docker hub
+root@docker:~# docker container run nginx   # docker engine first find image locally
+Unable to find image 'nginx:latest' locally # if image not available locally
+latest: Pulling from library/nginx          # pulling image from docker hub
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
