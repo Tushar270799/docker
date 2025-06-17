@@ -59,6 +59,10 @@ docker container ls # list running containers
 docker image ls # view local images
 docker container run ubuntu cat /etc/os-release # create and start docker container and run cat /etc/os-release command inside container.
 docker container ls -a # list all container including stopped container.
+docker container rm 4494538c3257 # remove docker container using CONTAINER ID
+docker container rm adoring_lewin # remove docker container using NAMES
+docker container rm -f d548cedaa430 # remove rinning docker container using CONTAINER ID
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
