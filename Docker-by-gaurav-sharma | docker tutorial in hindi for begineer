@@ -1,8 +1,55 @@
 INDEX
 1) architecture of container
+2)  Step-by-Step Docker Installation on Ubuntu 20.04.6
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
 windows os > hypervisor > guest os > docker > (lib only mandatory for app1, app1)
-                                            > (lib only mandatory for app2, app2)
+                                            > (lib only mandatory for app2, app2
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2)  Step-by-Step Docker Installation on Ubuntu 20.04.6
+
+Step 1: Uninstall old versions (if any)
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
+Step 2: Update APT & install prerequisites
+sudo apt-get update
+
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release -y
+
+Step 3: Add Docker's official GPG key
+sudo mkdir -p /etc/apt/keyrings
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+Step 4: Set up the Docker repository
+echo \
+  "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+Step 5: Update package index again
+sudo apt-get update
+
+Step 6: Install Docker Engine, CLI, and containerd
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+ Step 7: Verify Docker installation
+sudo docker --version
+sudo docker run hello-world
+
+Optional: Run Docker as non-root user
+sudo usermod -aG docker $USER
+newgrp docker
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
