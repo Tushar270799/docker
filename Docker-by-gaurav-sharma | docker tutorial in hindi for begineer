@@ -1,7 +1,7 @@
 INDEX
 1) architecture of container
 2)  Step-by-Step Docker Installation on Ubuntu 20.04.6
-3) basic docker command and concepts (CONTAINER INFO, CONTAINER IMAGE LISTING, CONTAINER REMOVE)
+3) basic docker command and concepts (CONTAINER INFO, CONTAINER IMAGE LISTING, CONTAINER REMOVE, start container, stop container, detach container, interactive tty to run command)
 4) pull image from docker hub
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -65,6 +65,18 @@ docker container rm adoring_lewin # remove docker container using NAMES
 docker container rm -f d548cedaa430 # remove rinning docker container using CONTAINER ID
 NOTE: INSTEAD OF MENTIONING COMPLETE CONTAINER ID WE CAN MENTION ONLY FIRST UNIQUE STRING
 NOTE: WE CAN PASS MULTIPE ID IN ARGUMENT TO REMOVE CONTAINER
+docker container start 2deda78fa093 # start stopped container using CONTAINER ID
+
+demo of container stop assumption after starting container it will take 30s to stop and it stop before that because of stop command :
+date ; docker container start 2deda78fa093 ; docker container stop 2deda78fa093 ; date
+Tue 17 Jun 2025 10:48:11 AM UTC
+2deda78fa093
+2deda78fa093
+Tue 17 Jun 2025 10:48:22 AM UTC
+
+docker container run -d ubuntu sleep 30s  # detach container in background
+
+
 
 
 
