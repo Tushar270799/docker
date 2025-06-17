@@ -4,7 +4,9 @@ INDEX
 3) basic docker command and concepts (CONTAINER INFO, CONTAINER IMAGE LISTING, CONTAINER REMOVE, start container, stop container, detach container, interactive tty to run command, exit container keeping container in running condition)
 4) pull image from docker hub
 5) delete all container including started and stopped.
-
+6) Inspect docker container.
+7) command to get container logs 
+8) command to get running processes inside container
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
 windows os > hypervisor > guest os > docker > (lib only mandatory for app1, app1)
@@ -101,6 +103,15 @@ docker container rm -f $(docker container ls -aq) # get container id of all list
 method 2: ( In case of one contaner) with this linux cli method we required much modification.
 docker container rm $(docker container ls -a | awk '{print $1}' | tail -n 1)
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6) Inspect docker container.
+purpose is to get container information like ip address
 
+docker container inspect d00799fd2023
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7) command to get container logs 
+docker container logs d00
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8) command to get running processes inside container
+docker container top d00
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
