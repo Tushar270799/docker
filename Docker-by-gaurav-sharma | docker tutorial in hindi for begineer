@@ -14,10 +14,7 @@ INDEX
 13) Take bash on existing running container
 14) rename container
 15) restart container
-16) Attatch to running container, kill, wait, pause, inpause, prune, port
-
-
-
+16) Attatch to running container
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
@@ -163,4 +160,17 @@ docker container rename nginx-container nginx-container-rename
 
 docker container restart 7ad91c47765d
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-16) Attatch to running container, kill, wait, pause, inpause, prune, port
+16) Attatch to running container
+
+Attatch to running container ( To check attach container, i did this container access on host machine port 443, and i can see access log in below command  )
+docker container attach 7a
+192.168.1.3 - - [17/Jun/2025:14:32:26 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" "-"
+
+ANOTHER EX:
+docker container run -itd ubuntu /bin/bash
+0a454504c0a29797acb962c4973b9034ff2c053d42127dad740f03d976e3bafa
+docker container attach 0a
+root@0a454504c0a2:/#
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
