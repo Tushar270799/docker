@@ -3,6 +3,7 @@ INDEX
 2)  Step-by-Step Docker Installation on Ubuntu 20.04.6
 3) basic docker command and concepts (CONTAINER INFO, CONTAINER IMAGE LISTING, CONTAINER REMOVE, start container, stop container, detach container, interactive tty to run command, exit container keeping container in running condition)
 4) pull image from docker hub
+5) delete all container including started and stopped.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
@@ -84,16 +85,22 @@ root@docker:~# docker container run -it ubuntu /bin/bash #run docker container a
 root@2984b9f6a684:/#  # press control+p+q to exit by keep contaner running
 root@2984b9f6a684:/# root@docker:~#
 
-
-
-
-
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 4) pull image from docker hub
 root@docker:~# docker container run nginx   # docker engine first find image locally
 Unable to find image 'nginx:latest' locally # if image not available locally
 latest: Pulling from library/nginx          # pulling image from docker hub
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5) delete all container including started and stopped.
+
+method 1:
+docker container rm -f $(docker container ls -aq) # get container id of all listed command and remove all start stopped container
+
+method 2: ( In case of one contaner) with this linux cli method we required much modification.
+docker container rm $(docker container ls -a | awk '{print $1}' | tail -n 1)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
