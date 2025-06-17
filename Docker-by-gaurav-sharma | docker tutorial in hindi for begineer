@@ -7,6 +7,8 @@ INDEX
 6) Inspect docker container.
 7) command to get container logs 
 8) command to get running processes inside container
+9) proof of container is not vm, host kernal which running process not seperate kernal use by container
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
 windows os > hypervisor > guest os > docker > (lib only mandatory for app1, app1)
@@ -114,4 +116,15 @@ docker container logs d00
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 8) command to get running processes inside container
 docker container top d00
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9) proof of container is not vm, host kernal which running process not seperate kernal use by container
+
+ps -aux | grep 1677
+And it showed:
+
+docker container top d00
+root  1677  ... nginx: master process ...
+That same PID was returned by:
+docker container top d00
+➡️ That means nginx inside the container is not running on a separate OS (VM) — it's a host process with namespace-based isolation.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
