@@ -1,7 +1,7 @@
 INDEX
 1) architecture of container
 2)  Step-by-Step Docker Installation on Ubuntu 20.04.6
-3) basic docker command and concepts (CONTAINER INFO, CONTAINER IMAGE LISTING, CONTAINER REMOVE, start container, stop container, detach container, interactive tty to run command)
+3) basic docker command and concepts (CONTAINER INFO, CONTAINER IMAGE LISTING, CONTAINER REMOVE, start container, stop container, detach container, interactive tty to run command, exit container keeping container in running condition)
 4) pull image from docker hub
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -75,6 +75,15 @@ Tue 17 Jun 2025 10:48:11 AM UTC
 Tue 17 Jun 2025 10:48:22 AM UTC
 
 docker container run -d ubuntu sleep 30s  # detach container in background
+
+root@docker:~# docker container run -it ubuntu /bin/bash # run container and execute command inside container
+root@a1780970451b:/#
+
+exit container keeping container in running condition:
+root@docker:~# docker container run -it ubuntu /bin/bash #run docker container and get interactive terminal of container
+root@2984b9f6a684:/#  # press control+p+q to exit by keep contaner running
+root@2984b9f6a684:/# root@docker:~#
+
 
 
 
