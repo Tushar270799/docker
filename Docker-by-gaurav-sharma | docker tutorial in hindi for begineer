@@ -10,6 +10,13 @@ INDEX
 9) proof of container is not vm, host kernal which running process not seperate kernal use by container
 10) command to get CPU and RAM usage of all containers on host:
 11) port forwarding
+12) define name to container
+13) Take bash on existing running container
+14) rename container
+15) restart container
+16) Attatch to running container, kill, wait, pause, inpause, prune, port
+
+
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -140,3 +147,20 @@ any request with url - http://192.168.1.100:443 with land on port 80 of containe
 docker container run -d -p 443:80 nginx
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+12) define name to container
+
+docker container run -d --name nginx-container nginx
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+13) Take bash on existing running container
+
+docker container exec -it d9a143b3bd66 /bin/bash
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+14) rename container
+
+docker container rename nginx-container nginx-container-rename
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+15) restart container
+
+docker container restart 7ad91c47765d
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+16) Attatch to running container, kill, wait, pause, inpause, prune, port
