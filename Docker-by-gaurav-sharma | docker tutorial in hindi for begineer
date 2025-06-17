@@ -9,6 +9,7 @@ INDEX
 8) command to get running processes inside container
 9) proof of container is not vm, host kernal which running process not seperate kernal use by container
 10) command to get CPU and RAM usage of all containers on host:
+11) port forwarding
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -132,4 +133,10 @@ docker container top d00
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 10) command to get CPU and RAM usage of all containers on host:
 docker container stats
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11) port forwarding
+
+any request with url - http://192.168.1.100:443 with land on port 80 of container
+docker container run -d -p 443:80 nginx
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
