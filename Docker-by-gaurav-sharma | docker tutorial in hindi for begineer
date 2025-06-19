@@ -17,6 +17,10 @@ INDEX
 16) Attatch to running container
 17) kill container
 18) wait command (use to get container exit code after container changed from running state )
+19 ) pause and unpause  container (It will pause entire container)
+21) know my contianer port map on which port of host interface
+22) create container means container will create and remain is stopped state , run means container create and run
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
@@ -181,3 +185,26 @@ docker container kill d272096d44c8
 18) wait command (use to get container exit code after container changed from running state )
 docker container wait d2 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+19 ) pause and unpause  container (It will pause entire container)
+docker container pause 67
+docker container unpause 67
+
+NOTE: ( simple scenario for understanding , launch nginx container with port forwarding from vm network to docker network, pause container, check url on browser you will get no response,
+now unpause contianer you will see nginx welcome page )
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+20) prune container (Remove stopped container)
+docker container prune  # this command will ask before removing stopped container
+docker container prune -f # This command will not ask before removing stopped container, prune command will not remove running container.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+21) know my contianer port map on which port of host interface
+
+docker container port ea
+80/tcp -> 0.0.0.0:8088
+80/tcp -> [::]:8088
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+22) create container means container will create and remain is stopped state , run means container create and run
+
+docker container create ubuntu sleep 60
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+23) 
