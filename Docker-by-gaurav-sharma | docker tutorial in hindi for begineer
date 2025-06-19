@@ -15,6 +15,8 @@ INDEX
 14) rename container
 15) restart container
 16) Attatch to running container
+17) kill container
+18) wait command (use to get container exit code after container changed from running state )
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
@@ -173,4 +175,9 @@ docker container attach 0a
 root@0a454504c0a2:/#
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+17) kill container (stop container suddenly)
+docker container kill d272096d44c8
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+18) wait command (use to get container exit code after container changed from running state )
+docker container wait d2 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
