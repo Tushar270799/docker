@@ -20,7 +20,9 @@ INDEX
 19 ) pause and unpause  container (It will pause entire container)
 21) know my contianer port map on which port of host interface
 22) create container means container will create and remain is stopped state , run means container create and run
-
+23) diff docker container ( use to see change in container files )
+24) copy host machine file to container.
+25) export to tar file, Import to image, docker container.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
@@ -207,4 +209,36 @@ docker container port ea
 
 docker container create ubuntu sleep 60
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-23) 
+23) diff docker container ( use to see change in container files )
+NOTE : Changed file after creating container will store in container file system
+NOTE : all file along with container will remain in image file system.
+
+root@docker:~# docker container diff 85
+root@docker:~#
+NOTE : no change in file in ubuntu container hence no output return.
+
+| Marker | Meaning                                                               |
+| ------ | --------------------------------------------------------------------- |
+| `A`    | **Added** — A file or directory was added.                            |
+| `C`    | **Changed** — A file or directory was modified (content or metadata). |
+| `D`    | **Deleted** — A file or directory was deleted.                        |
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+24) copy host machine file to container.
+docker container cp git/ da38e70f92b0:/tmp/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+25) export to tar file, Import to image, docker container.
+export container to tar file
+root@docker:~# docker container export 66 > myubuntu_tree_git.tar
+root@docker:~# docker container export 66 -o myubuntu_tree_gito.tar
+
+Now tar file will restore as image on host machine.
+docker image import myubuntu_tree_gito.tar my_image_ubuntu_git_tr  
+
+NOTE : Now we can run container from image on host.
+NOTE : Observation installed pkg and changes remain intact.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
