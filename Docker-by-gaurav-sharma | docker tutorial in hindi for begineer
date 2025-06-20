@@ -23,6 +23,7 @@ INDEX
 23) diff docker container ( use to see change in container files )
 24) copy host machine file to container.
 25) export to tar file, Import to image, docker container.
+26) create docker image from running container.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
@@ -240,5 +241,12 @@ NOTE : Now we can run container from image on host.
 NOTE : Observation installed pkg and changes remain intact.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+26) create docker image from running container.
+root@docker:~# docker container commit --author "Tushar Sonawane" -m "this is test commit" c88 my-testimage
+
+NOw we can run container from this image in both cases we will get files and packages inside container or (WE CAN GET SNAPSHOT)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
