@@ -27,7 +27,7 @@ INDEX
 27) docker image tag
 28) docker login
 29) push image to docker hub
-
+30) combined command related to images
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
 windows os > hypervisor > guest os > docker > (lib only mandatory for app1, app1)
@@ -289,5 +289,26 @@ root@docker:~#
 docker push tushar27799/my_image_ubuntu_git_tree_taggedtwice
 docker image push tushar27799/my_image_ubuntu_git_tree_taggedtwice
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+30) combined command related to images
+docker image ls # list images on host
+docker image ls --format '{{.ID}} {{.Repository}}' # command to get image ID and Repository
 
+| **Placeholder** | **Description**                          |
+| --------------- | ---------------------------------------- |
+| `.ID`           | Image ID                                 |
+| `.Repository`   | Image repository                         |
+| `.Tag`          | Image tag                                |
+| `.Digest`       | Image digest                             |
+| `.CreatedSince` | Elapsed time since the image was created |
+| `.CreatedAt`    | Time when the image was created          |
+| `.Size`         | Image disk size                          |
+
+docker image history ubuntu #Image histroy
+docker image rm -f ubuntu # remove image used by container
+docker rmi -f ubuntu
+
+docker image rm  ubuntu # remove image not used by any container
+docker rmi ubuntu
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
