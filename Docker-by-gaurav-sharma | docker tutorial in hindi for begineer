@@ -255,7 +255,9 @@ dockerhub url - hub.docker.com
 dockerhub username - tushar27799
 password - Kalyan123tush@r
 
-docker image tag my_image_ubuntu_git_tree hub.docker.com/tushar27799/my_image_ubuntu_git_tree_taggedtwice
+docker image tag my_image_ubuntu_git_tree tushar27799/my_image_ubuntu_git_tree_taggedtwice
+or 
+docker tag d53a2cb28d18 tushar27799/my_image_ubuntu_git_tree_taggedtwice:latest
 
 NOTE: below are observations, tagged image have same image id as original image.
 
