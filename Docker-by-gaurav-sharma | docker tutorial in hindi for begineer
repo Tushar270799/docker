@@ -5,7 +5,7 @@ INDEX
 4) pull image from docker hub
 5) delete all container including started and stopped.
 6) Inspect docker container.
-7) command to get container logs 
+7) command to get container logs h
 8) command to get running processes inside container
 9) proof of container is not vm, host kernal which running process not seperate kernal use by container
 10) command to get CPU and RAM usage of all containers on host:
