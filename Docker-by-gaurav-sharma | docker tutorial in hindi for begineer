@@ -25,6 +25,8 @@ INDEX
 25) export to tar file, Import to image, docker container.
 26) create docker image from running container.
 27) docker image tag
+28) docker login
+29) push image to docker hub
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
@@ -253,6 +255,36 @@ dockerhub url - hub.docker.com
 dockerhub username - tushar27799
 password - Kalyan123tush@r
 
+docker image tag my_image_ubuntu_git_tree hub.docker.com/tushar27799/my_image_ubuntu_git_tree_taggedtwice
 
+NOTE: below are observations, tagged image have same image id as original image.
+
+my_image_ubuntu_git_tree                                          latest    d53a2cb28d18   16 hours ago   210MB
+hub.docker.com/tushar27799/my_image_ubuntu_git_tree_tagged        latest    d53a2cb28d18   16 hours ago   210MB
+hub.docker.com/tushar27799/my_image_ubuntu_git_tree_taggedtwice   latest    d53a2cb28d18   16 hours ago   210MB
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+28) docker login
+
+root@docker:~# docker login -u tushar27799
+
+i Info → A Personal Access Token (PAT) can be used instead.
+         To create a PAT, visit https://app.docker.com/settings
+
+
+Password:
+
+WARNING! Your credentials are stored unencrypted in '/root/.docker/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+root@docker:~#
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+29) push image to docker hub
+docker push hub.docker.com/tushar27799/my_image_ubuntu_git_tree_taggedtwice
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
