@@ -24,6 +24,7 @@ INDEX
 24) copy host machine file to container.
 25) export to tar file, Import to image, docker container.
 26) create docker image from running container.
+27) docker image tag
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
@@ -246,6 +247,11 @@ root@docker:~# docker container commit --author "Tushar Sonawane" -m "this is te
 
 NOw we can run container from this image in both cases we will get files and packages inside container or (WE CAN GET SNAPSHOT)
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+27) docker image tag
+
+dockerhub url - hub.docker.com
+dockerhub username - tushar27799
+password - Kalyan123tush@r
 
 
 
