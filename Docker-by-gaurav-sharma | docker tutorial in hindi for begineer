@@ -261,9 +261,9 @@ docker tag d53a2cb28d18 tushar27799/my_image_ubuntu_git_tree_taggedtwice:latest
 
 NOTE: below are observations, tagged image have same image id as original image.
 
-my_image_ubuntu_git_tree                                          latest    d53a2cb28d18   16 hours ago   210MB
-hub.docker.com/tushar27799/my_image_ubuntu_git_tree_tagged        latest    d53a2cb28d18   16 hours ago   210MB
-hub.docker.com/tushar27799/my_image_ubuntu_git_tree_taggedtwice   latest    d53a2cb28d18   16 hours ago   210MB
+my_image_ubuntu_git_tree                           latest    d53a2cb28d18   16 hours ago   210MB
+tushar27799/my_image_ubuntu_git_tree_tagged        latest    d53a2cb28d18   16 hours ago   210MB
+tushar27799/my_image_ubuntu_git_tree_taggedtwice   latest    d53a2cb28d18   16 hours ago   210MB
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -286,7 +286,8 @@ root@docker:~#
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 29) push image to docker hub
-docker push hub.docker.com/tushar27799/my_image_ubuntu_git_tree_taggedtwice
+docker push tushar27799/my_image_ubuntu_git_tree_taggedtwice
+docker image push tushar27799/my_image_ubuntu_git_tree_taggedtwice
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
