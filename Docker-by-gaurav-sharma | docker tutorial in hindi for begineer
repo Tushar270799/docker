@@ -234,6 +234,9 @@ docker container cp git/ da38e70f92b0:/tmp/
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 25) export to tar file, Import to image, docker container.
 export container to tar file
+
+NOTE : volume mount in container will not stored in tar file created during container export
+
 root@docker:~# docker container export 66 > myubuntu_tree_git.tar
 root@docker:~# docker container export 66 -o myubuntu_tree_gito.tar
 
@@ -309,6 +312,24 @@ docker rmi -f ubuntu
 
 docker image rm  ubuntu # remove image not used by any container
 docker rmi ubuntu
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+31) save and load docker image 
+
+Note : if we have multiple image of same name with different tag and if we forgot to mention specific image tag then it will make tar of all images together.
+
+docker image save nginx -o nginx.tar
+docker image load < nginx.tar
+
+example:
+docker image save ubuntu:latest -o latest.tar
+docker image save ubuntu:22.04 -o 22.tar
+docker image save ubuntu -o combine.tar
+
+du -sh 22.tar latest.tar combine.tar
+77M     22.tar
+77M     latest.tar
+154M    combine.tar
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
