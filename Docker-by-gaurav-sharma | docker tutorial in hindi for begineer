@@ -29,7 +29,7 @@ INDEX
 29) push image to docker hub
 30) combined command related to images
 31) save and load docker image 
-
+32) Dockerfile
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
 windows os > hypervisor > guest os > docker > (lib only mandatory for app1, app1)
@@ -343,4 +343,6 @@ echo "FROM ubuntu:22.04" > Dockerfile
 NOTE : From parameter can be small and Capital both will work.
 NOTE : Command to build image from dockerfile, dot represent Dockerfile in current directory
 docker image build -t myubuntu:1 .
+
+NOET : always put new modification in docker file at end so that it can read all previously done thing from cache and only focus on new things.
 
