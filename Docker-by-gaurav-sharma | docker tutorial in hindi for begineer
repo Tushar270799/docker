@@ -447,7 +447,7 @@ root@f2f1c628fe29:/tmp# cat tmp.txt
 /tmp
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-37) WORKDIR - use of workdir is we can suggest working directory for all next command that will run
+37) WORKDIR - use of workdir is we can suggest working directory for all next command that will run after workdir parameter.
 NOTE : workdir will set working directory when we enter into container
 
 1. root@docker:~/Dockerfiles# vi Dockerfile 
