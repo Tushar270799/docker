@@ -30,7 +30,9 @@ INDEX
 30) combined command related to images
 31) save and load docker image 
 32) Dockerfile
-33) DOCKERFILE : Label, run, env, woekdir
+33) DOCKERFILE : Label, run, env, workdir
+34) ENV  variable
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
@@ -373,8 +375,32 @@ docker image inspect myubuntu:4 | less
 ...
 ...
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+34) ENV  variable
 
+1. root@docker:~/Dockerfiles# vi Dockerfile 
+...
+...
+ENV NAME=tushar
+ENV PASS=password 
+...
+...
 
+2. root@docker:~/Dockerfiles# docker image build -t myubuntu:6 .
+
+3. root@docker:~/Dockerfiles# docker image ls
+myubuntu                                                          6         b8d1ce5866fb   3 days ago     143MB
+
+4. root@docker:~/Dockerfiles# docker container run -it myubuntu:6 /bin/bash
+
+5. root@10325b9718d6:/# env
+...
+...
+NAME=tushar
+PASS=password
+...
+...
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
