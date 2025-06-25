@@ -30,6 +30,8 @@ INDEX
 30) combined command related to images
 31) save and load docker image 
 32) Dockerfile
+33) DOCKERFILE : Label, run, env, woekdir
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
 windows os > hypervisor > guest os > docker > (lib only mandatory for app1, app1)
@@ -345,4 +347,35 @@ NOTE : Command to build image from dockerfile, dot represent Dockerfile in curre
 docker image build -t myubuntu:1 .
 
 NOET : always put new modification in docker file at end so that it can read all previously done thing from cache and only focus on new things.
+NOTE : image build from Dockerfile will generally get id of latest layer builded.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+33) DOCKERFILE : Label, run, env, workdir
+
+LABEL:
+information for image
+
+vi Dockerfile
+LABEL name="Tushar Sonawane"
+LABEL email="sonawane.tushar.work@gmail.com"
+
+docker image build -t myubuntu:4 .
+
+docker image inspect myubuntu:4 | less
+...
+...
+...
+   "Labels": {
+                "email": "sonawane.tushar.work@gmail.com",
+                "name": "Tushar Sonawane",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "22.04"
+...
+...
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
