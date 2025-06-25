@@ -32,6 +32,10 @@ INDEX
 32) Dockerfile
 33) DOCKERFILE : Label, run, env, workdir
 34) ENV  variable
+35) NOTE : below activity shows that each command is run from home directory of user if on seperate line.
+36) Below observation if single RUN includes multiple command then one will execute after other because of execution with same shell.
+37) WORKDIR - use of workdir is we can suggest working directory for all next command that will run
+
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -402,6 +406,65 @@ PASS=password
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+35) NOTE : below activity shows that each command is run from home directory of user if on seperate line.
+1. root@docker:~/Dockerfiles# vi Dockerfile 
+...
+...
+RUN pwd>/tmp/root.txt
+RUN cd /tmp
+RUN pwd>/tmp/tmp.txt
+...
+...
 
+2. root@docker:~/Dockerfiles# docker image build -t myubuntu:7 .
 
+3. root@docker:~/Dockerfiles# docker container run -it myubuntu:7 /bin/bash
+
+4. root@1490c727cc1d:/# cd /tmp
+root@1490c727cc1d:/tmp# cat root.txt 
+/
+root@1490c727cc1d:/tmp# cat tmp.txt 
+/
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+36) Below observation if single RUN includes multiple command then one will execute after other because of execution with same shell.
+
+1. root@docker:~/Dockerfiles# vi Dockerfile 
+...
+...
+RUN cd /tmp ; pwd>/tmp/tmp.txt
+...
+...
+
+2. root@docker:~/Dockerfiles# docker image build -t myubuntu:8 .
+
+3. root@docker:~/Dockerfiles# docker container run -it myubuntu:8 /bin/bash
+
+4. root@f2f1c628fe29:/# cd /tmp
+root@f2f1c628fe29:/tmp# cat root.txt 
+/
+root@f2f1c628fe29:/tmp# cat tmp.txt 
+/tmp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+37) WORKDIR - use of workdir is we can suggest working directory for all next command that will run
+NOTE : workdir will set working directory when we enter into container
+
+1. root@docker:~/Dockerfiles# vi Dockerfile 
+...
+...
+WORKDIR /etc
+RUN pwd>/tmp/etc.txt
+...
+...
+
+2. root@docker:~/Dockerfiles# docker image build -t myubuntu:9 .
+
+3. root@docker:~/Dockerfiles# docker container run -it myubuntu:9 /bin/bash
+
+4. root@667cea563b77:/etc# cd /tmp
+root@667cea563b77:/tmp# cat etc.txt 
+/etc
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
