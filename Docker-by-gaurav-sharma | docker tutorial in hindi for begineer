@@ -34,7 +34,9 @@ INDEX
 34) ENV  variable
 35) NOTE : below activity shows that each command is run from home directory of user if on seperate line.
 36) Below observation if single RUN includes multiple command then one will execute after other because of execution with same shell.
-37) WORKDIR - use of workdir is we can suggest working directory for all next command that will run
+37) WORKDIR - use of workdir is we can suggest working directory for all next command that will run.
+38) USER command use in Dockerfile:
+
 
 
 
@@ -467,4 +469,8 @@ root@667cea563b77:/tmp# cat etc.txt
 /etc
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+38) USER command use in Dockerfile:
+USER ${NAME} #use to switch user in dockerfile
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
