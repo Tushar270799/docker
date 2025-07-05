@@ -35,10 +35,9 @@ INDEX
 35) NOTE : below activity shows that each command is run from home directory of user if on seperate line.
 36) Below observation if single RUN includes multiple command then one will execute after other because of execution with same shell.
 37) WORKDIR - use of workdir is we can suggest working directory for all next command that will run.
-38) USER command use in Dockerfile:
-
-
-
+38) USER command use in Dockerfile
+39) copy local file to container.
+40) ADD parameter used in dockerfile to add package from some source work like wget, also work like untar in container for tar file on local host.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1) architecture of container
@@ -471,6 +470,12 @@ root@667cea563b77:/tmp# cat etc.txt
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 38) USER command use in Dockerfile:
 USER ${NAME} #use to switch user in using dockerfile, with this your docker by default login user can be set. 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+39) copy local file to container.
+COPY welcome.txt /tmp/project/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+40) ADD parameter used in dockerfile to add package from some source work like wget, also work like untar in container for tar file on local host.
+ADD https://rpmfind.net/linux/mageia/distrib/cauldron/armv7hl/media/core/release/libtopcom0-0.17.8-5.mga10.armv7hl.rpm /tmp/project
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
