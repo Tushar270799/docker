@@ -22,5 +22,7 @@ RUN whoami > /tmp/2stwhoami.txt
 RUN mkdir /tmp/project
 COPY welcome.txt /tmp/project/
 ADD https://rpmfind.net/linux/mageia/distrib/cauldron/armv7hl/media/core/release/libtopcom0-0.17.8-5.mga10.armv7hl.rpm /tmp/project
+CMD sudo -i 
+
 
 
