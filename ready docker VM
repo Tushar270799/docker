@@ -1,0 +1,51 @@
+RCA container VM:
+---------------------------------------------------------
+1. install docker desktop
+2. install git bash
+3. open docker desktop
+4. run below commands
+# Fedora SSH Container
+docker run -itd --name ssh-fedora \
+  -p 2221:22 \
+  tushar27799/ssh-fedorafinal
+
+# CentOS SSH Container
+docker run -itd --name ssh-centos \
+  -p 2222:22 \
+  tushar27799/ssh-centosfinal
+
+# AlmaLinux SSH Container
+docker run -itd --name ssh-almalinux \
+  -p 2223:22 \
+  tushar27799/almalinuxfinal
+
+# openSUSE SSH Container
+docker run -itd --name ssh-opensuse \
+  -p 2224:22 \
+  tushar27799/ssh-opensuse
+
+# RedHat SSH Container
+docker run -itd --name ssh-redhat \
+  -p 2225:22 \
+  tushar27799/redhat
+
+# Kali Linux Container
+docker run -itd --name kali-vm \
+  -p 2226:22 \
+  tushar27799/kalivm2
+
+# Ubuntu SSH Container
+docker run -itd --name ssh-ubuntu \
+  -p 2227:22 \
+  tushar27799/ubuntu-sshd
+5. password root
+6. run below commands to access container 
+ssh root@localhost -p 2221  # Fedora
+ssh root@localhost -p 2222  # CentOS
+ssh root@localhost -p 2223  # AlmaLinux
+ssh root@localhost -p 2224  # openSUSE
+ssh root@localhost -p 2225  # RedHat
+ssh root@localhost -p 2226  # Kali
+ssh root@localhost -p 2227  # Ubuntu
+
+---------------------------------------------------------
